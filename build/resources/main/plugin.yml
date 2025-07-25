@@ -1,0 +1,7 @@
+name: Architectury_API
+version: '17.0.8'
+main: me.glitch.abilitys.Main
+api-version: '1.21'
+commands:
+  architectury_debug_dev:
+    usage: /architectury_debug_dev
