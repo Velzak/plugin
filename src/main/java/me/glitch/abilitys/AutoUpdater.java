@@ -10,7 +10,7 @@ import java.nio.file.Files;
 
 public class AutoUpdater {
     private final JavaPlugin plugin;
-    private final String repo = "https://github.com/glitchspring548/plugin"; // e.g., "GlitchDev/MyPlugin"
+    private final String repo = "glitchspring548/plugin"; // e.g., "GlitchDev/MyPlugin"
     private final String currentVersion;
 
     public AutoUpdater(JavaPlugin plugin) {
