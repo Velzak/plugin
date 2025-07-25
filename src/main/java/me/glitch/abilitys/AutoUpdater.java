@@ -36,8 +36,9 @@ public class AutoUpdater {
 
                 String response = content.toString();
                 String latestTag = extract(response, "\"tag_name\":\"", "\"");
+                String normalizedLatest = latestTag.replaceFirst("^v", "");
 
-                if (!latestTag.equalsIgnoreCase("v" + currentVersion)) {
+                if (!latestTag.equalsIgnoreCase(currentVersion)) {
                     Bukkit.getLogger().info("[Updater] New version found: " + latestTag);
                     String downloadUrl = extract(response, "\"browser_download_url\":\"", "\"");
 
