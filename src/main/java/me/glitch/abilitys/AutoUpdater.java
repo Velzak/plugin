@@ -10,7 +10,7 @@ import java.nio.file.Files;
 
 public class AutoUpdater {
     private final JavaPlugin plugin;
-    private final String repo = "YourGitHubUsername/YourRepoName"; // e.g., "GlitchDev/MyPlugin"
+    private final String repo = "https://github.com/glitchspring548/plugin"; // e.g., "GlitchDev/MyPlugin"
     private final String currentVersion;
 
     public AutoUpdater(JavaPlugin plugin) {
@@ -21,7 +21,6 @@ public class AutoUpdater {
     public void checkAndUpdate() {
         Bukkit.getScheduler().runTaskAsynchronously(plugin, () -> {
             try {
-                // GitHub latest release API
                 URL url = new URL("https://api.github.com/repos/" + repo + "/releases/latest");
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setRequestProperty("Accept", "application/vnd.github.v3+json");
@@ -45,7 +44,6 @@ public class AutoUpdater {
                     File pluginsFolder = plugin.getDataFolder().getParentFile();
                     File newFile = new File(pluginsFolder, plugin.getName() + "-update.jar");
 
-                    // Download new file
                     try (InputStream inStream = new URL(downloadUrl).openStream()) {
                         Files.copy(inStream, newFile.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
                     }

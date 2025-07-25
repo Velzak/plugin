@@ -1,5 +1,5 @@
 name: Architectury_API
-version: '17.0.8'
+version: '1.0.0'
 main: me.glitch.abilitys.Main
 api-version: '1.21'
 commands:
