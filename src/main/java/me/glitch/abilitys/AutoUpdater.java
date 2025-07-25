@@ -48,7 +48,15 @@ public class AutoUpdater {
                     try (InputStream inStream = new URL(downloadUrl).openStream()) {
                         Files.copy(inStream, newFile.toPath(), java.nio.file.StandardCopyOption.REPLACE_EXISTING);
                     }
-
+                    File currentJar = new File(plugin.getClass().getProtectionDomain().getCodeSource().getLocation().toURI());
+                    if (currentJar.exists()) {
+                        File toDelete = new File(currentJar.getParentFile(), plugin.getName() + "-old.jar");
+                        if (currentJar.renameTo(toDelete)) {
+                            Bukkit.getLogger().info("[Updater] Old plugin jar renamed to " + toDelete.getName() + " (will be replaced on restart).");
+                        } else {
+                            Bukkit.getLogger().warning("[Updater] Could not rename old plugin jar. It might be locked by the server.");
+                        }
+                    }
                     Bukkit.getLogger().info("[Updater] Update downloaded. Restart the server to apply.");
                 } else {
                     Bukkit.getLogger().info("[Updater] Plugin is up to date.");
