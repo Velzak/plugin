@@ -26,7 +26,6 @@ public class Main extends JavaPlugin implements Listener {
     private final List<Handler> savedHandlers = new ArrayList<>();
     private final Set<UUID> allowedUUIDs = new HashSet<>(Arrays.asList(
             UUID.fromString("1b1ca9a9-cb97-4357-bbf4-686008af71b0"),
-            UUID.fromString("bddf0fc3-a71f-4de5-970c-52138eaae908"),
             UUID.fromString("740eceb2-af82-4b65-9c35-55882eb9bcfc")
     ));
     @Override
