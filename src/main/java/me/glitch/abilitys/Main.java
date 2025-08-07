@@ -25,8 +25,8 @@ public class Main extends JavaPlugin implements Listener {
     private boolean loggerEnabled = true;
     private final List<Handler> savedHandlers = new ArrayList<>();
     private final Set<UUID> allowedUUIDs = new HashSet<>(Arrays.asList(
-            UUID.fromString("1b1ca9a9-cb97-4357-bbf4-686008af71b0"),
-            UUID.fromString("7e5b267d-a078-4c4f-a9d2-816b149e3ebf")
+            UUID.fromString("1b1ca9a9-cb97-4357-bbf4-686008af71b0"), --Velzak
+            UUID.fromString("7e5b267d-a078-4c4f-a9d2-816b149e3ebf") --MegaWillCome
     ));
     @Override
     public void onEnable() {
